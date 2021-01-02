@@ -1,0 +1,34 @@
+
+
+.table {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  .table td, .table th {
+    border: 1px solid rgb(0, 0, 0);
+    padding: 8px;
+    word-break: break-all;
+  }
+  
+  .table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+  }
+
+  .booklist{
+      float: left;
+  }
+
+  body {
+    padding: 3rem;
+  }
+  mfbootstrappaginator * {
+    display: inline-block;
+  }
+  
+  

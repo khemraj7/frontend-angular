@@ -1,0 +1,31 @@
+<div class="container" >
+     
+      <div><h1><b>Book-user</b></h1></div>
+        
+        <div class="form">
+            <form  #loginForm='ngForm' >
+              <div class="form-group">
+                <label for="name">Username</label>
+                <input type="text" class="form-control" [(ngModel)]="user.username" name="name"  required>
+              </div>
+              <div class="form-group">
+                <label for="name">Password</label>
+                <input type="password" class="form-control" [(ngModel)]="user.password" name="password" required>
+              </div>
+              <div *ngIf="error" style="color:red;">
+                {{ error }}
+              </div>
+              <div>
+                <button   class="btn btn-success"  (click)=saveUser() ><b>Log in</b></button>
+                <p class="message">Not Registerd ?<a [routerLink]="['/signup']" style="margin:5px;">Create an account</a></p>  
+            </div>
+            </form>
+          </div>
+        
+      </div>
+
+
+
+
+
+

@@ -1,0 +1,22 @@
+<div class="cont">
+
+  <ul class="nav navbar-nav" style="width:100%; ">
+
+    <li *ngIf="userService.loggedin()" class="nav-Item" style="width:100%;">
+       <!-- <h4 style="text-align: center;">Welcome in book-App</h4> -->
+      <a class="active" [routerLink]="['/books']">Home</a>
+      <a class="active" [routerLink]="['/book-create']">Create Book</a>
+      <a class="logout" (click)="onlogout()" [routerLink]="['/login']" style="float: right;">Logout</a>
+      <a  style="float: right;" [routerLink]="['/profile']" >{{userDisplayName}}</a>
+
+    </li>
+
+    <li *ngIf="!userService.loggedin()" class="nav-Item" style="width:100%;">
+      <h4 style="float:left; color:white; margin: 30;" ><b>Book App</b></h4>
+      <a class="active" [routerLink]="['/login']" style="float: right;">Log In</a>
+      <a class="active" [routerLink]="['/signup']" style="float: right;">Sign Up</a>
+      <br><br>
+    </li>
+
+  </ul>
+</div>

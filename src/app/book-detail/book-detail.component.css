@@ -1,0 +1,32 @@
+.row .btn{
+  margin: 20px;
+  font-size: 1.4rem;
+  border-radius: 999999px;
+  padding: 0.4rem 2rem !important;
+  font-weight: 600;
+  color: black;
+  background-color: white;
+}
+.row .btn.btn-outline-success:hover{
+background-color:green;
+color: white;
+}
+.row .btn.btn-outline-danger:hover{
+background-color:red;
+color: white;
+}
+.btn-outline-light{
+font-weight: 600;
+}
+
+dt{
+font-size: 2rem;
+}
+dd{
+font-size: 1.5rem;
+}
+dt, dd{
+width: 40%;
+display: inline-block;
+margin: auto 2.5%;
+}

@@ -1,0 +1,75 @@
+<!-- <div class="container">
+  <h1>{{ book.title }}</h1> -->
+  <!-- <dl class="list">
+    <dt>ISBN</dt>
+    <dd>{{ book.isbn }}</dd>
+    <dt>Author</dt>
+    <dd>{{ book.author }}</dd>
+    <dt>Publisher</dt>
+    <dd>{{ book.publisher }}</dd>
+    <dt>Price</dt>
+    <dd>{{ book.price }}</dd>
+    <dt>Update Date</dt>
+    <dd>{{ book.updated_date|date }}</dd>
+  </dl> -->
+  
+
+  <!-- <table class="table">
+    <thead>
+      <tr>
+        <th style="text-align: center;">Author</th>
+        <th style="text-align: center;"> Published Year</th>
+        <th style="text-align: center;">Publisher</th>
+        <th style="text-align: center;">Price</th>
+        <th style="text-align: center;">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{ book.author }}</td>
+        <td>{{ book.published_year }}</td>
+        <td>{{ book.publisher }}</td>
+        <td>{{ book.price }}</td>
+        <td> <a [routerLink]="['/book-edit/'+book._id]" style="text-align: center;">Edit</a></td>
+        </tr>
+    </tbody>
+  </table> 
+
+  <br>
+<br>
+<div class="row">
+  <div class="col-md-12">
+    <button class="btn btn-danger" type="button" (click)="deleteBook(book._id)" style="margin:5px;">DELETE</button>
+    <button class="btn btn-success" [routerLink]="['/signup']" style="margin:5px;">Back</button>
+  </div>
+</div>
+
+</div> -->
+<div class="row px-5 py-3">
+  <div class="col-md-12">
+    <a [routerLink]="['']" class="btn btn-outline-danger mx-5">Back To details</a>
+  </div>
+</div>
+<div class="container">
+  <h1>{{ book.title }}</h1>
+  <dl class="list">
+    <dt>ISBN</dt>
+    <dd>{{ book.isbn }}</dd>
+    <dt>Author</dt>
+    <dd>{{ book.author }}</dd>
+    <dt>Publisher</dt>
+    <dd>{{ book.publisher }}</dd>
+    <dt>PublishYear</dt>
+    <dd>{{ book.published_year }}</dd>
+    <dt>Create Date</dt>
+    <dd>{{ book.createdAt|date}}</dd>
+  </dl>
+  <div class="row">
+    <div class="col-md-3 ml-auto px-2">
+      <a [routerLink]="['/book-edit', book._id]" class="btn btn-outline-success px-3">EDIT</a>
+    </div>
+    <div class="col-md-3 mr-auto px-2">
+      <button class="btn btn-outline-danger px-3" type="button" (click)="deleteBook(book._id)">DELETE</button>
+    </div>
+  </div>
+</div>

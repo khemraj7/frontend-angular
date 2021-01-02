@@ -1,0 +1,94 @@
+<div class="container">
+  <div class="booklist">
+    <h1><b>Book List</b></h1>
+  </div>
+
+  <!-- <table class="table" >
+    <thead>
+      <tr class="title">
+        <th>ISBN</th>
+        <th>Title</th>
+        <th>Author</th>
+        <th style="text-align: center;">Published Year</th>
+        <th style="text-align: center;">Publisher</th>
+        <th style="text-align: center;">Price</th>
+        <th style="text-align: center;">Status</th>
+        <th style="text-align: center;">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let book of books">
+        <td>{{ book.isbn }}</td>
+        <td>{{ book.title }}</td>
+        <td>{{ book.author }}</td>
+        <td>{{ book.published_year }}</td>
+        <td>{{ book.publisher }}</td>
+        <td>{{ book.price }}</td>
+        <td>
+          <button *ngIf="book.status" (click)="enable(book)" >Active</button>          
+          <button *ngIf="!book.status" (click)="enable(book)">In-Active</button>
+      </td>
+        <td> <a [routerLink]="['/book-details/'+book._id]">Show Detail</a></td>
+      </tr>
+    </tbody>
+  </table> -->
+  <table class="table" [mfData]="books" #mf="mfDataTable" [mfRowsOnPage]="5" [mfSaveRowsOnPage]="true"
+    (mfSelectedEntities)="setSelectedEntities($event)">
+    <thead>
+      <tr>
+        <!-- <th style="width: 15%">
+                <mfRowSelectorHead></mfRowSelectorHead>
+            </th> -->
+        <th style="width: 15%">
+          <mfDefaultSorter by="isbn"  >ISBN</mfDefaultSorter>
+        </th>
+        <th style="width: 15%">
+          <mfDefaultSorter by="title">Title</mfDefaultSorter>
+        </th>
+        <th style="width: 15%">
+          <mfDefaultSorter by="author">Author</mfDefaultSorter>
+        </th>
+        <th style="width: 15%">
+          <mfDefaultSorter by="published_year">Published_Year</mfDefaultSorter>
+        </th>
+        <th style="width: 15%">
+          <mfDefaultSorter by="publisher">Publisher</mfDefaultSorter>
+        </th>
+        <th style="width: 15%">
+          <mfDefaultSorter by="price">Price</mfDefaultSorter>
+        </th>
+        <th style="width: 15%">
+          Status
+        </th>
+        <th style="width: 15%">
+          Action
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let book of mf.data;">
+        <!-- <td><mfRowSelector [entity]="book" [checkboxId]="ndx"></mfRowSelector></td> -->
+        <td>{{ book.isbn }}</td>
+        <td>{{ book.title }}</td>
+        <td>{{ book.author }}</td>
+        <td>{{ book.published_year }}</td>
+        <td>{{ book.publisher }}</td>
+        <td>{{ book.price }}</td>
+        <td>
+          <a *ngIf="book.status" (click)="enable(book)" style="font-size: 1.5rem;" class="btn btn-primary">Active</a>
+          <a *ngIf="!book.status" (click)="enable(book)" style="font-size: 1.5rem;" class="btn btn-primary">In-Active</a>
+        </td>
+        <td><a [routerLink]="['/book-details', book._id]" style="font-size: 1.5rem;" class="btn btn-primary">See Details
+          </a></td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr class="navigation">
+        <td colspan="12">
+          <mfBootstrapPaginator style="display: flex; justify-content: space-between;
+            width: 100%; max-width: 1000%;" [rowsOnPageSet]="[5,10]"></mfBootstrapPaginator>
+        </td>
+      </tr>
+    </tfoot>
+  </table>
+</div>
